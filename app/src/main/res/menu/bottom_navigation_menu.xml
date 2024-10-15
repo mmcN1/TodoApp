@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#45474B"
+    >
+    <item
+        android:id="@+id/page_home"
+        android:icon="@drawable/ic_note_foreground"
+        android:iconTint="#EFEFEF"
+        android:title="Notes"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/page_reminders"
+        android:icon="@drawable/ic_time_foreground"
+        android:iconTint="#EFEFEF"
+        android:title="Reminders"
+        app:showAsAction="never" />
+
+
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPageActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/tertiary">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo_foreground"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:layout_weight="1">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/appName"
+    android:gravity="center"
+    android:text="Note-"
+    android:textColor="@color/primary"
+    style="@style/TextAppearance.AppCompat.Large"
+android:textStyle="bold"
+    android:fontFamily="@font/oswald_variablefont_wght"
+    android:textSize="50dp"
+android:letterSpacing="0.08"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appName1"
+        android:gravity="center"
+        android:text="X"
+        android:textSize="55dp"
+        android:fontFamily="@font/oswald_variablefont_wght"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        />
+    </LinearLayout>
+</LinearLayout>

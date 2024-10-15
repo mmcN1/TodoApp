@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ToDoApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<item name="colorPrimary">@color/primary</item>
+        <item name="android:editTextColor">@android:color/black</item>
+    </style>
+    
+<style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+    <item name="backgroundTint">@color/tertiary</item>
+    <item name="cornerRadius">5dp</item>
+</style>
+
+    <style name="Theme.ToDoApp" parent="Base.Theme.ToDoApp" />
+    <style name="Custom_button" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/custom_fb_bg</item>
+    </style>
+</resources>
