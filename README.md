@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/14c36855-658f-46d9-bcfb-6ab6aac51c6e)Note-X App
+Note-X App
 Project Description
 This project is an Android application that helps users manage their to-do lists. Users can add, edit, delete, and search their notes.
 
