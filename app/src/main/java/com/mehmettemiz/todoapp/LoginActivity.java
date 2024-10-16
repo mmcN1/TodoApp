@@ -11,6 +11,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +26,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
@@ -46,6 +48,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.mehmettemiz.todoapp.databinding.ActivityLoginBinding;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
@@ -59,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     Boolean lang;
     ProgressDialog progressDialog;
     CallbackManager mCallbackManager;
-    LoginButton loginButton;
+    Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,22 +76,29 @@ public class LoginActivity extends AppCompatActivity {
 
         mCallbackManager = CallbackManager.Factory.create();
          loginButton = findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email", "public_profile");
-        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                handleFacebookAccessToken(loginResult.getAccessToken());
-            }
+         loginButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this,
+                         Arrays.asList("email", "public_profile"));
+                 LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                     @Override
+                     public void onSuccess(LoginResult loginResult) {
+                         handleFacebookAccessToken(loginResult.getAccessToken());
+                     }
 
-            @Override
-            public void onCancel() {
-            }
+                     @Override
+                     public void onCancel() {
+                     }
 
-            @Override
-            public void onError(FacebookException error) {
-                System.out.println("failed");
-            }
-        });
+                     @Override
+                     public void onError(FacebookException error) {
+                         System.out.println("failed");
+                     }
+                 });
+             }
+         });
+
 
         binding.errorText.setVisibility(View.GONE);
 
@@ -124,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
-        SignInButton signInButton = findViewById(R.id.signInButton);
+        Button signInButton = findViewById(R.id.signInButton);
 
         // Buton tıklanma olayını tanımla
         signInButton.setOnClickListener(v -> signIn());
