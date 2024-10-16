@@ -67,4 +67,9 @@ This project is an Android application that helps users manage their to-do lists
 - Run the application on a device or emulator.
 
 ## Usage
-1. Open the app and sign in with your Google account from the **Login Scre
+1. Open the app and sign in with your Google account from the **Login Screen**.
+2. Browse your notes in the main menu.
+3. Click the **Add Note** button to create a new note.
+4. Tap on an existing note to view or edit its content.
+5. To delete a note, click on it and confirm the deletion option.
+6. Update your user information or log out from the profile section.
